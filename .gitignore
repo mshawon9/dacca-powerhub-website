@@ -1,0 +1,53 @@
+# -------------------------
+# WebStorm / IntelliJ Files
+# -------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# -------------------------
+# Node.js / Package Manager
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# -------------------------
+# Build / Output
+# -------------------------
+dist/
+build/
+out/
+coverage/
+
+# -------------------------
+# OS Generated Files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Logs & Temp
+# -------------------------
+*.log
+*.tmp
+*.swp
+*.swo
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.local
+.env.*.local
+
+# -------------------------
+# Cache
+# -------------------------
+.cache/
+.vscode/
