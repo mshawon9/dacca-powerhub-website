@@ -1,0 +1,250 @@
+:root {
+    --primary-color: #0D1B2A; /* Dark Navy */
+    --secondary-color: #FF6B00; /* Orange */
+    --text-light: #F8F9FA;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+/* Hide navbar by default */
+.navbar {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* Navbar */
+.navbar {
+    background: var(--primary-color);
+}
+.navbar-brand {
+    font-weight: bold;
+    color: var(--secondary-color) !important;
+    text-transform: uppercase;
+    animation: glow 2s infinite alternate;
+}
+.nav-link {
+    color: var(--text-light) !important;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 5px var(--secondary-color); }
+    to { text-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color); }
+}
+
+/* Hero */
+.hero {
+    background: var(--primary-color);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.hero h2 {
+    color: var(--secondary-color);
+    min-height: 50px;
+}
+
+.hero-tagline {
+    background: linear-gradient(90deg, #FF6B00, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 1.3rem;
+    opacity: 0;
+    animation: fadeSlideUp 1.5s ease forwards;
+    animation-delay: 0.8s;
+    transition: text-shadow 0.3s ease;
+}
+.hero-tagline:hover {
+    text-shadow: 0px 0px 15px rgba(255, 107, 0, 0.8);
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animated diagonal gradient overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, rgba(13,27,42,0.8), rgba(255,107,0,0.3));
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    z-index: 1;
+}
+.hero .container {
+    z-index: 2;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Feature */
+.feature-item {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.feature-item i {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateY(-8px);
+}
+.feature-item:hover i {
+    transform: scale(1.3);
+    text-shadow: 0px 0px 15px rgba(255, 107, 0, 0.8);
+}
+
+/* Services */
+.service-card {
+    background: #1B263B; /* slightly lighter dark blue */
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(255, 107, 0, 0.4);
+}
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color); /* orange */
+}
+/* Brands */
+.brand-logo {
+    max-height: 70px;
+    transition: all 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+.brand-logo:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Pricing */
+.card h3 {
+    color: var(--secondary-color);
+}
+
+.pricing-card {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    border-top: 4px solid transparent;
+}
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-top: 4px solid var(--secondary-color);
+    box-shadow: 0px 8px 25px rgba(255, 107, 0, 0.4);
+}
+
+/* Testimonial */
+.testimonial {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.testimonial i {
+    color: var(--secondary-color);
+}
+/* FAQ */
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--secondary-color);
+}
+.accordion-button:not(.collapsed) {
+    background: var(--secondary-color);
+    color: white;
+}
+
+#faq .accordion-button {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+#faq .accordion-button.collapsed {
+    background: #fff;
+    color: var(--primary-color);
+}
+#faq .accordion-body {
+    background: #f8f9fa;
+    border-left: 3px solid var(--secondary-color);
+}
+
+/* Testimonials */
+.testimonial {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* pricing */
+.pricing-card {
+    transition: all 0.3s ease-in-out;
+    border-top: 4px solid transparent;
+}
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-top: 4px solid var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px 0;
+}
+/* Glowing WhatsApp Button */
+.btn-glow {
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.7); /* Orange glow */
+    transition: all 0.3s ease-in-out;
+}
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 1), 0 0 50px rgba(255, 107, 0, 0.8);
+    transform: scale(1.05);
+}
+
+
+/* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+.bouncy {
+    animation: bounce 2s infinite;
+}
