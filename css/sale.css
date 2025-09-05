@@ -44,3 +44,27 @@
     from { opacity: 1; text-shadow: 0 0 10px #FFD700; }
     to   { opacity: 0.4; text-shadow: none; }
 }
+
+/* Glowing offer text inside navbar */
+.offer-glow {
+    background: var(--secondary-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.8);
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    from {
+        box-shadow: 0 0 8px rgba(255, 107, 0, 0.7), 0 0 15px rgba(255, 107, 0, 0.6);
+        transform: scale(1);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 107, 0, 1), 0 0 35px rgba(255, 107, 0, 0.9);
+        transform: scale(1.05);
+    }
+}
